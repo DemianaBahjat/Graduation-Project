@@ -1,0 +1,448 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- <link href="{% static 'style.css'%}" rel="stylesheet" type="text/css"> -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-bn98Qqb94rrTbfZ8T1TFCnYlRLfkd7Dq3E8lL7zfwvcBZw+7VnJtZaN45COhGcH+wPYr7EDgURtL2So7VH4Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://unpkg.com/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<style>
+body {
+    background-image: url("{% static 'ima.jpeg' %}");
+	background-size: cover;
+    background-repeat: repeat;
+}
+.header-area{
+    background: white;
+}
+.form-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    min-height: 100vh;
+}
+
+.form-box{
+    border: 2px solid #2E91E4;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+	border-color: #2E91E4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #2E91E4;
+}
+
+.form-box h4 {
+    font-weight: bold;
+    color: #2E91E4
+}
+
+.form-box .form-input {
+    position: relative;
+}
+
+.form-box .form-input input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;    
+    box-sizing: border-box;
+    box-shadow: none;
+    border: 1px solid #a3d3f1;
+    border-radius: 40px;
+    outline: none;
+    color: #2E91E4;
+    background: transparent;   
+    padding-left: 40px;
+}
+.form-box .form-input select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;    
+    box-sizing: border-box;
+    box-shadow: none;
+    border: 1px solid #a3d3f1;
+    border-radius: 40px;
+    outline: none;
+    color: #2E91E4;
+    background: transparent;   
+    padding-left: 40px;
+}
+.form-box .form-input option {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;    
+    box-sizing: border-box;
+    box-shadow: none;
+    border: 1px solid #a3d3f1;
+    border-radius: 40px;
+    outline: none;
+    color: #2E91E4;
+    background: transparent;   
+    padding-left: 40px;
+} 
+
+.form-box .form-input span {
+    position: absolute;
+    top: 8px;
+    padding-left: 15px;
+    color: #2E91E4;
+}
+
+.form-box .form-input input::placeholder {
+    color: #2E91E4;
+    padding-left: 0px;
+}
+
+.form-box .form-input input:focus,
+.form-box .form-input input:valid {
+    border: 2px solid #2E91E4;
+}
+
+.form-box .form-input input:focus::placeholder {
+    color: #2E91E4;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+background-color: #2E91E4 !important;
+border:0px;
+}
+
+.form-box button[type="submit"] {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background:  #2E91E4;
+    color: #fff;
+    font-weight: bold;
+    /* transition: 0.5s; */
+    width: 50%;
+
+}
+
+.form-box button[type="submit"]:hover {
+    background: #2E91E4;
+    width: 50%;
+}
+
+.forget-link , .login-link , .register-link {
+    color: #2E91E4;
+    font-weight: bold;
+    width: 50%;
+
+
+}
+
+.forget-link:hover , .login-link:hover , .register-link:hover {
+    color: #2E91E4;
+    text-decoration: none;
+    width: 50%;
+
+}
+
+.form-box .btn-social {
+    color: white;
+    border: 0;
+}
+
+.form-box .btn-facebook {
+    background: #4866a8;
+}
+
+.form-box .btn-google {
+    background: #e61e3f;
+}
+
+.form-box .btn-twitter {
+    background: #33ccff;
+}
+
+.form-box .btn-facebook:hover {
+    color: white;
+    background: hsla(221, 40%, 40%, 1);
+}
+
+.form-box .btn-google:hover {
+    color: white;
+    background: hsla(4, 59%, 47%, 1);
+}
+
+.form-box .btn-twitter:hover {
+    color: white;
+    background: hsla(195, 78%, 54%, 1);
+}
+.number{
+	margin-right: 10px;
+	letter-spacing: 20px;
+}
+
+</style>
+<body>
+	<header>
+		<!--? Header Start -->
+		<div class="header-area">
+			<div class="main-header header-sticky">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<!-- Logo -->
+						<div class="col-xl-2 col-lg-2 col-md-1">
+							<div class="logo">
+								<!-- <h1 style="color: black; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Stroke</h1> -->
+	
+								<a href="{% url 'accounts:home' %}"><img class="w-50" src="{%static 'assets/img/logo/PicsArt_23-04-29_14-41-32-154-removebg-preview.png' %}" alt=""></a>
+							</div>
+						</div>
+						<div class="col-xl-10 col-lg-10 col-md-10">
+							<div class="menu-main d-flex align-items-center justify-content-end">
+								<!-- Main-menu -->
+								<div class="main-menu f-right d-none d-lg-block">
+									<nav>
+										<ul id="navigation">
+											<li><a href="{% url 'accounts:home' %}">Home</a></li>
+											<li><a href="{% url 'predict:prediction' %}">stroke</a></li>
+											<li><a href="{% url 'predict:Dite_plan' %}">Diets plan</a></li>
+											<li><a href="{% url 'accounts:profile' %}">profile</a></li>
+											{% if user.is_authenticated %}
+											<li><a href="{% url 'accounts:logout' %}">logout</a></li>
+											{% else %}
+											<li><a href="{% url 'accounts:login' %}">login</a></li>
+											{% endif %}
+										</ul>
+									</nav>
+								</div>
+								<!-- <div class="header-right-btn f-right d-none d-lg-block ml-30">
+									<a href="#" class="btn header-btn">^^</a>
+								</div> -->
+							</div>
+						</div>   
+						<!-- Mobile Menu -->
+						<div class="col-12">
+							<div class="mobile_menu d-block d-lg-none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header End -->
+	</header>
+	<div class="container-fluid" style=" position: relative;">
+		<div class="row" style="margin-bottom: 25px;">
+			<div class="col-lg-6 form-block px-4">
+				<div class="col-lg-8 col-md-6 col-sm-8 col-xs-12 form-box">
+					<div class="text-center mb-3 mt-5">
+						
+					</div>
+					<h4 class="text-center mb-4">
+						Stroke Prediction
+					</h4>
+					<form method="POST" id="form1" name="form1">
+						<input type="hidden" name="form_name" value="form1">
+						{% csrf_token %}
+						<div class="form-input" >
+							<p style="color: #2E91E4;">This Prediction For : </p>
+							{{ form.patient_code }}
+						</div>
+						<div class="form-input">
+							{{ form.age.label_tag }}
+							{{ form.age }}
+						</div>
+						<div class="form-input">
+							{{ form.gender.label_tag }}
+							{{ form.gender }}
+						</div>
+						<div class="form-input">
+							<label for="{{ form.hypertension.id_for_label }}">Hypertension:</label>
+							<select id="hypertension" name="{{ form.hypertension.name }}">
+								<!-- {{ form.hypertension }} -->
+								{% for value, text in form.hypertension.field.choices %}
+								<option value="{{ value }}" {% if value == form.hypertension.value %}selected{% endif %}>{{ text }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-input">
+							{{ form.work_type.label_tag }}
+							{{ form.work_type }}
+						</div>
+						<div class="form-input">
+							{{ form.heart_disease.label_tag }}
+							{{ form.heart_disease }}
+						</div>
+						<div class="form-input">
+							{{ form.avg_glucose_level.label_tag }}
+							{{ form.avg_glucose_level }}
+						</div>
+						<div class="form-input">
+							{{ form.height.label_tag }}
+							{{ form.height }}
+						</div>
+						<div class="form-input">
+							{{ form.weight.label_tag }}
+							{{ form.weight }}
+						</div>
+						<div class="mb-3"> 
+							<button type="submit" name="predict" class="btn btn-block">
+								Predict 
+							</button>
+						</div>
+						<div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+			<div >
+				<form method="POST" id="form2" name="form2" onsubmit="updateHypertension(event)">
+					<input type="hidden" name="form_name" value="form2">
+					{% csrf_token %}
+					<h4 style="color: #2E91E4;">Hypertension Prediction : Live Data Stream</h4>
+					<div style="border: 1px solid #2E91E4; padding: 10px;margin: 8px 12px 8px 12px;"
+					id="numbers">
+						{% for number in numbers %}
+						<span style="display: inline-block; margin: 10px 10px 10px 10px ;font-size: 20px;;">{{ number }}</span>
+						{% endfor %}
+						<div style="text-align: center;">
+							<img src="data:image/png;base64,{{ chart_image }}" alt="Heart Rate Chart" style="border: 1px solid #2E91E4; padding: 10px;margin: 8px 12px 8px 12px;"> 
+						</div>
+							<div class="mb-3"> 
+							<button style="margin-top: 10px;border: none;border-radius: 20px; background: #2E91E4; color: #fff;
+							font-weight: bold; width: 70%;" type="submit" id="predict-hypertension-btn" onclick="updateHypertension()"
+							class="btn btn-block">
+							Predict Hypertension
+						</button>
+						<div id="hypertension-prediction"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="text-center mb-5" style="border: none;border-radius: 20px;">
+				<a class="login-link" href="{% url 'predict:compass' %}">go</a>
+			</div>
+
+			<div>
+				
+			</div>
+
+			<footer style=" position: relative;
+			bottom: 120;
+			margin-bottom: 50px;
+			width: 100%;
+			height: 20px;">
+				<!--? Footer Start-->
+				<div class="footer-area section-bg" data-background="{% static 'assets/img/gallery/footer_bg.jpg'%}">
+					<div class="container">
+						<div class="footer-top footer-padding">
+							<div class="row d-flex justify-content-between">
+								<div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
+									<div class="single-footer-caption mb-50">
+		
+										<div class="footer-logo">
+										<a href="{% url 'accounts:home' %}"><img class="w-50" src="{% static 'assets/img/logo/PicsArt_23-04-29_14-41-32-154-removebg-preview.png'%}" alt=""></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
+									<div class="single-footer-caption mb-50">
+										<div class="footer-tittle">
+											<h4>About Us</h4>
+											<div class="footer-pera">
+												<p class="info1">Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod
+													tempor cergelit rgh. </p>
+												<p class="info1">Lorem ipsum dolor sit amet, adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+									<div class="single-footer-caption mb-50">
+										<div class="footer-number mb-50">
+											<!-- <h4><span>+564 </span>7885 3222</h4>
+											<p>youremail@gmail.com</p> -->
+										</div>
+										<!-- Form -->
+										<div class="footer-form">
+											<div id="mc_embed_signup">
+												<form target="_blank"
+													action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+													method="get" class="subscribe_form relative mail_part" novalidate="true">
+													<input type="email" name="EMAIL" id="newsletter-form-email"
+														placeholder=" Email Address " class="placeholder hide-on-focus"
+														onfocus="this.placeholder = ''"
+														onblur="this.placeholder = 'Your email address'">
+													<div class="form-icon">
+														<button type="submit" name="submit" id="newsletter-submit"
+															class="email_icon newsletter-submit button-contactForm">
+															Send
+														</button>
+													</div>
+													<div class="mt-10 info"></div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer-bottom">
+							<div class="row d-flex justify-content-between align-items-center">
+								<div class="col-xl-9 col-lg-8">
+									<div class="footer-copy-right">
+		
+		
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4">
+									<!-- Footer Social -->
+									<div class="footer-social f-right">
+										<a href="#"><i class="fab fa-twitter"></i></a>
+										<a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+										<a href="#"><i class="fas fa-globe"></i></a>
+										<a href="#"><i class="fab fa-instagram"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer End-->
+			</footer>
+</body>
+<script>
+	function updateHypertension(event) {
+	  // Prevent the form from submitting normally
+	event.preventDefault();
+
+	  // Make an AJAX request to the server to predict hypertension
+	$.ajax({
+		type: 'POST',
+		url: '/predict/',
+		data: $('#form2').serialize(),
+		success: function(response) {
+		// Update the value of the hypertension field in the first form
+		if (response.heart_hyper_result == 1) {
+			$('#hypertension').val('1');
+		} else {
+			$('#hypertension').val('0');
+		}
+		},
+		error: function(xhr, status, error) {
+		console.log(error);
+		}
+	});
+}
+	</script>
+</html>

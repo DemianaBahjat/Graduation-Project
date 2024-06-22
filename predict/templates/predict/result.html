@@ -1,0 +1,1176 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+        <title>Result</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="{%static 'https://fonts.googleapis.com' %}">
+        
+        <link rel="preconnect" href="{%static 'https://fonts.gstatic.com' %}" crossorigin>
+        
+        <link href="{%static 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap' %}" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+        <!-- <link href="{% static 'css/templatemo-medic-care.css' %}" rel="stylesheet"> -->
+        <style>
+        /*
+
+TemplateMo 566 Medic Care
+
+https://templatemo.com/tm-566-medic-care
+
+*/
+
+/*---------------------------------------
+CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+--white-color:                  #FFFFFF;
+--back-color:                    #fcfeff;
+--primary-color:                #2E91E4;
+--section-bg-color:             #F9F9F9;
+--dark-color:                   #000000;
+--title-color:                  #565758;
+--p-color:                      #1d1e20;
+--border-color:                 #eaeaea;
+
+--body-font-family:             'Open Sans', sans-serif;
+
+--h1-font-size:                 35px;
+--h2-font-size:                 30px;
+--h3-font-size:                 25px;
+--h4-font-size:                 25px;
+--h5-font-size:                 22px;
+--h6-font-size:                 22px;
+--p-font-size:                  18px;
+--menu-font-size:               16px;
+
+--font-weight-light:            400;
+--font-weight-normal:           300;
+--font-weight-semibold:         400;
+--font-weight-bold:             400;
+}
+
+body {
+    background-image: url("{% static 'magazine.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: var(--body-font-family);    
+    position: sticky;
+    padding-top: 0px;
+}
+.move {
+position: relative;
+align-items: center;
+justify-content: center;
+display: flex;
+top: -110px;
+}
+.header-area{
+    background: white;
+}
+/*---------------------------------------
+TYPOGRAPHY               
+-----------------------------------------*/
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: var(--back-color);
+line-height: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-weight: var(--font-weight-semibold);
+}
+
+h1,
+h2 {
+font-weight: var(--font-weight-bold);
+}
+
+h1 {
+font-size: var(--h1-font-size);
+line-height: normal;
+}
+
+h2 {
+font-size: var(--h2-font-size);
+color: #2E91E4;
+letter-spacing: 5PX;
+line-height: 0.8;
+font-weight: bold;
+}
+
+h3 {
+font-size: var(--h3-font-size);
+}
+
+h4 {
+font-size: var(--h4-font-size);
+}
+
+h5 {
+font-size: var(--h5-font-size);
+}
+
+h6 {
+font-size: var(--h6-font-size);
+}
+
+p {
+color: var(--p-color);
+font-size: var(--p-font-size);
+font-weight: var(--font-weight-light);
+letter-spacing: 0.8px;
+}
+
+a, 
+button {
+touch-action: manipulation;
+transition: all 0.3s;
+}
+
+a {
+color: var(--p-color);
+text-decoration: none;
+}
+
+a:hover {
+color: var(--primary-color);
+}
+
+.section-padding {
+padding-top: 7rem;
+padding-bottom: 7rem;
+}
+
+/*---------------------------------------
+CUSTOM LINK               
+-----------------------------------------*/
+.custom-link {
+display: inline-block;
+text-decoration: none;
+border: 1px solid var(--border-color);
+color: var(--primary-color);
+pointer-events: auto;
+font-weight: var(--font-weight-semibold);
+line-height: 40px;
+position: relative;
+padding: 0 30px;
+box-sizing: border-box;
+margin: 0;
+-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+overflow: hidden;
+border-radius: 0;
+text-transform: uppercase;
+}
+
+.custom-link::before {
+content: attr(data-hover);
+background-color: var(--border-color);
+color: var(--primary-color);
+position: absolute;
+top: 100%;
+bottom: 0;
+left: 0;
+transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+right: 0;
+text-align: center;
+}
+
+.custom-link:hover::before {
+top: 0;
+}
+
+b,
+strong {
+font-weight: var(--font-weight-bold);
+}
+
+/*---------------------------------------
+LIST GROUP               
+-----------------------------------------*/
+.list-group-item {
+background-color: transparent;
+color: var(--p-color);
+font-size: var(--p-font-size);
+padding: 1rem 0;
+}
+
+.list-group-item:first-child {
+padding-top: 0;
+}
+
+.list-group-item span {
+font-weight: var(--font-weight-semibold);
+margin-left: auto;
+}
+
+/*---------------------------------------
+ANIMATED TEXT              
+-----------------------------------------*/
+.animated {
+position: relative;
+}
+
+.animated-info {
+display: inline-block;
+vertical-align: top;
+min-width: 250px;
+position: relative;
+}
+
+.animated-item {
+color: var(--primary-color);
+}
+
+.animated-item {
+display: block;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+animation: BottomTotop 6s linear infinite 0s;
+}
+
+.animated-item:nth-child(2n+2) {
+animation-delay: 2s;
+}
+
+.animated-item:nth-child(3n+3) {
+animation-delay: 4s;
+}
+
+@keyframes BottomTotop {
+0% {
+    opacity: 0;
+}
+5% {
+    opacity: 0;
+    transform: translateY(5px);
+}
+10% {
+    opacity: 1;
+    transform: translateY(0px);
+}
+25% {
+    opacity: 1;
+    transform: translateY(0px);
+}
+30% {
+    opacity: 0;
+    transform: translateY(5px);
+}
+80% {
+    opacity: 0;
+}
+100% {
+    opacity: 0;
+}
+}
+
+/*---------------------------------------
+HERO              
+-----------------------------------------*/
+.hero {  
+padding-top: 0rem;
+}
+
+.hero .container {
+position: relative;
+overflow: hidden;
+height: 580px;
+}
+
+.heroText {
+background: var(--white-color);
+position: absolute;
+z-index: 2;
+bottom: 0;
+right: 0;
+padding: 1.5rem 2.5rem;
+width: 50%;
+}
+
+.contact-phone {
+font-weight: var(--font-weight-semibold);
+}
+
+/*---------------------------------------
+FEATURED              
+-----------------------------------------*/
+.featured-circle {
+border-radius: 100%;
+width: 350px;
+height: 350px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.featured-text {
+font-size: var(--h6-font-size);
+line-height: 2rem;
+font-weight: var(--font-weight-bold);
+text-align: center;
+margin-bottom: 0;
+}
+
+.featured-number {
+color: var(--primary-color);
+font-size: 8rem;
+margin: 0 10px;
+}
+
+/*---------------------------------------
+NAVIGATION              
+-----------------------------------------*/
+.navbar {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.navbar-brand {
+color: var(--primary-color);
+font-size: var(--h5-font-size);
+font-weight: var(--font-weight-bold);
+margin: 0 30px;
+padding: 0;
+text-align: center;
+}
+
+.navbar-brand strong {
+color: var(--p-color);
+font-size: 12px;
+position: relative;
+bottom: 5px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+padding-right: 1.5rem;
+padding-left: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+color: var(--p-color);
+font-weight: var(--font-weight-semibold);
+font-size: var(--menu-font-size);
+padding-top: 15px;
+padding-bottom: 15px;
+}
+
+.navbar-nav .nav-item.active .nav-link, 
+.nav-link:focus, 
+.nav-link:hover {
+color: var(--dark-color);
+}
+
+.nav-link:focus {
+color: var(--p-color);
+}
+
+.navbar-toggler {
+border: 0;
+padding: 0;
+cursor: pointer;
+margin: 0;
+width: 30px;
+height: 35px;
+outline: none;
+}
+
+.navbar-toggler:focus {
+outline: none;
+box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+background: var(--dark-color);
+transition: background 10ms 300ms ease;
+display: block;
+width: 30px;
+height: 2px;
+position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+position: absolute;
+right: 0;
+left: 0;
+background: var(--dark-color);
+width: 30px;
+height: 2px;
+content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon:before {
+top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon:after {
+top: 8px;
+}
+
+/*---------------------------------------
+TIMELINE               
+-----------------------------------------*/
+.timeline,
+.timeline-nodes {
+position: relative;
+}
+
+.timeline-nodes:nth-child(even) {
+flex-direction: row-reverse;
+}
+
+.timeline h3, 
+.timeline p {
+padding: 10px 30px;
+} 
+
+.timeline h3 {
+background: var(--primary-color);
+}
+
+.timeline::before {
+content: "";
+display: block;
+position: absolute;
+top: 37px;
+left: 50%;
+width: 0;
+border-left: 1px solid var(--primary-color);
+height: 85%;
+z-index: 1;
+transform: translateX(-50%);
+}
+
+.timeline-content {
+position: relative;
+border-radius: 0 0 0.25rem 0.25rem;
+padding: 0;
+}
+
+.timeline-nodes:nth-child(odd) h3,
+.timeline-nodes:nth-child(odd) p {
+text-align: left;
+}
+
+.timeline-nodes:nth-child(odd) .timeline-date {
+text-align: left;
+}
+
+.timeline-nodes:nth-child(even) .timeline-date {
+text-align: right;
+}
+
+.timeline-nodes:nth-child(odd) h3::after {
+content: "";
+position: absolute;
+top: 50%;
+left: 100%;
+transform: translate(0, -50%);
+width: 0;
+border-left: 10px solid var(--primary-color);
+border-top: 10px solid transparent;
+border-bottom: 10px solid transparent;
+}
+
+.timeline-nodes h3 {
+position: relative;
+border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.timeline-nodes:nth-child(even) h3::after {
+content: "";
+position: absolute;
+top: 50%;
+right: 100%;
+transform: translate(0, -50%);
+width: 0;
+border-right: 10px solid var(--primary-color);
+border-top: 10px solid transparent;
+border-bottom: 10px solid transparent;
+}
+
+.timeline-icons {
+position: relative;
+z-index: 100;
+}
+
+.timeline-icons::before {
+content: "";
+width: 80px;
+height: 80px;
+border-radius: 50%;
+display: block;
+position: absolute;
+top: 0;
+left: 50%;
+transform: translate(-50%,0);
+background: var(--white-color);
+box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+z-index: 1;
+}
+
+.timeline-icon {
+position: relative;
+z-index: 100;
+font-size: var(--h3-font-size);
+color: var(--primary-color);
+display: block;
+text-align: center;
+line-height: 80px;
+}
+
+@media (max-width: 767px) {
+.timeline-nodes:nth-child(odd) h3,
+.timeline-nodes:nth-child(odd) p {
+    text-align: right;
+}
+
+.timeline-nodes:nth-child(even) {
+    flex-direction: row;
+}
+
+.timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 33px;
+    width: 0;
+    height: 90%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.timeline-icons {
+    position: absolute;
+    left: 0%;
+    top: 60px;
+}
+
+.timeline-nodes:nth-child(odd) h3::after {
+    left: auto;
+    right: 100%;
+    border-left: 0;
+    border-right: 10px solid var(--primary-color);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.timeline-nodes:nth-child(even) h3::after {
+    right: 100%;
+    width: 0;
+    border-right: 10px solid var(--primary-color);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.timeline-nodes:nth-child(even) .timeline-date {
+    text-align: left;
+}
+
+.timeline-icons::before {
+    width: 75px;
+    height: 75px;
+}
+
+.timeline-icon {
+    line-height: 75px;
+}
+}
+
+@media (max-width: 575px) {
+.timeline::before {
+    content: "";
+    display: block;
+    top: 60px;
+    left: 57px;
+    height: 87%;
+}
+
+.timeline-icons {
+    position: absolute;
+    left: -10px;
+}
+
+.timeline-icons::before {
+    width: 70px;
+    height: 70px;
+}
+
+.timeline-icon {
+    line-height: 70px;
+}
+}
+
+/*---------------------------------------
+REVIEWS               
+-----------------------------------------*/
+.reviews-thumb {
+margin-bottom: 0;
+padding: 32px;
+}
+
+.reviews-text {
+margin-top: 10px;
+margin-bottom: 25px;
+}
+
+.reviews-image {
+border-radius: 100px;
+width: 70px !important;
+height: 70px !important;
+}
+.reviews-carousel .owl-item {
+opacity: 0.45;
+}
+
+.reviews-carousel .owl-item.active.center {
+opacity: 1;
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb {
+background: var(--dark-color);
+}
+
+.reviews-carousel .owl-item.active.center .reviews-thumb,
+.reviews-carousel .owl-item.active.center .reviews-text {
+color: var(--white-color);
+}
+
+.reviews-carousel .owl-nav {
+display: flex;
+justify-content: space-between;
+margin: auto;
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.reviews-carousel .owl-nav span {
+width: 35px;
+height: 35px;
+line-height: 35px;
+display: block;
+}
+
+.reviews-carousel .owl-nav .owl-prev {
+position: relative;
+left: -80px;
+}
+
+.reviews-carousel .owl-nav .owl-next {
+position: relative;
+right: -80px;
+}
+
+.reviews-carousel .owl-prev span,
+.reviews-carousel .owl-next span {
+color: transparent;
+}
+
+.reviews-carousel .owl-prev span::before,
+.reviews-carousel .owl-next span::before {
+font-family: bootstrap-icons;
+display: block;
+font-size: var(--h3-font-size);
+color: var(--p-color);
+width: 35px;
+height: 35px;
+}
+
+.reviews-carousel .owl-prev span::before {
+content: "\f12f";
+}
+
+.reviews-carousel .owl-next span::before {
+content: "\f138";
+}
+
+/*---------------------------------------
+BOOKING FORM            
+-----------------------------------------*/
+
+.booking-form .form-control {
+background: transparent;
+border-radius: 0;
+border: 0;
+border-bottom: 1px solid var(--border-color);
+color: #6c757d;
+font-weight: var(--font-weight-normal);
+padding-top: 12px;
+padding-bottom: 12px;
+margin-top: 15px;
+transition: all 0.3s;
+}
+
+.booking-form #submit-button {
+background: var(--dark-color);
+border-bottom: 0;
+font-weight: var(--font-weight-semibold);
+color: var(--white-color);
+text-transform: uppercase;
+margin-top: 35px;
+}
+
+.booking-form #submit-button:hover {
+background: (colo rgb(42, 83, 219));
+}
+
+/*---------------------------------------
+FOOTER              
+-----------------------------------------*/
+.site-footer {
+background: var(--section-bg-color);
+}
+
+.copyright-text {
+font-size: var(--menu-font-size);
+}
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+margin: 0;
+padding: 0;
+}
+
+.social-icon li {
+list-style: none;
+display: inline-block;
+vertical-align: top;
+transition: all 0.3s;
+}
+
+.social-icon:hover li:not(:hover) {
+opacity: 0.65;
+}
+
+.social-icon-link {
+font-size: var(--p-font-size);
+display: inline-block;
+vertical-align: top;
+margin-top: 4px;
+margin-bottom: 4px;
+margin-right: 15px;
+}
+
+.social-icon-link:hover {
+color: var(--primary-color);
+}
+
+/*---------------------------------------
+RESPONSIVE STYLES               
+-----------------------------------------*/
+@media screen and (min-width: 1600px) {
+.hero .container {
+    height: 740px;
+}
+}
+
+@media screen and (max-width: 991px) {
+body {
+    padding-top: 74px;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+.section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.hero .container {
+    height: inherit;
+}
+
+.heroText {
+    position: relative;
+    bottom: 100px;
+    left: 0;
+    width: auto;
+    margin-bottom: -100px;
+    padding: 2rem;
+}
+
+.featured-circle {
+    width: 320px;
+    height: 320px;
+}
+}
+
+@media screen and (max-width: 767px) {
+.heroText {
+    padding: 1.5rem;
+}
+
+.animated-info {
+    min-width: 125px;
+}
+
+.featured-circle {
+    margin-top: 20px;
+}
+
+.reviews-carousel .owl-nav {
+    position: relative;
+    width: auto !important;
+    transform: inherit;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100px;
+    margin: 20px auto;
+}
+
+.reviews-carousel .owl-nav .owl-prev,
+.reviews-carousel .owl-nav .owl-next {
+    right: 0;
+    left: 0;
+}
+}
+
+@media screen and (max-width: 480px) {
+.heroText {
+    padding: 1rem;
+}
+
+.heroLinks .custom-link {
+    font-size: 12px;
+    line-height: 30px;
+    margin-right: 12px !important;
+    padding: 0 25px;
+}
+
+.contact-phone {
+    font-size: 12px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.featured-number {
+    font-size: 5rem;
+}
+
+.featured-circle {
+    width: 235px;
+    height: 235px;
+}
+
+.reviews-image {
+    width: 55px !important;
+    height: 55px !important;
+}
+
+.reviews-thumb figcaption {
+    font-size: var(--menu-font-size);
+}
+.timeline::before {
+    left: 42px;
+}
+}
+.main-header header-sticky{
+    background-color: white;
+    height: max-content;
+}
+        </style>
+    </head>
+
+    <body id="top">
+        <header>
+            <!--? Header Start -->
+            <div class="header-area">
+                <div class="main-header header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                    <!-- <h1 style="color: black; cursor: pointer;" onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'">Stroke</h1> -->
+        
+                                    <a href="{% url 'accounts:home' %}"><img class="w-50" src="{%static 'assets/img/logo/PicsArt_23-04-29_14-41-32-154-removebg-preview.png' %}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="menu-main d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu f-right d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{% url 'accounts:home' %}">Home</a></li>
+                                                <li><a href="{% url 'predict:prediction' %}">stroke</a></li>
+                                                <li><a href="{% url 'predict:Dite_plan' %}">Diets plan</a></li>
+
+                                                <li><a href="{% url 'accounts:profile' %}">profile</a></li>
+                                                {% if user.is_authenticated %}
+                                                <li><a href="{% url 'accounts:logout' %}">logout</a></li>
+                                                {% else %}
+                                                <li><a href="{% url 'accounts:login' %}">login</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                        <a href="#" class="btn header-btn">^^</a>
+                                    </div> -->
+                                </div>
+                            </div>   
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header End -->     
+        <main>
+>
+<h2 class="text-center mb-lg-5 mb-4"> Prediction Results  </h2>
+<div class="move">
+        <section class="section-padding pb-0" id="timeline">
+                <div class="container">
+                    <div class="row">
+                        
+                    <div class="timeline">
+                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
+                                <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
+                                    <h3 class=" text-light">Results</h3>
+
+                                    <p> The probability of having <b style="color: red; font-weight: bold; "> {{ result }} </b></p>
+                                    {% if result > 0 %}
+                                    <p> <strong> You are <b style="color: red; font-weight: bold; "> have at high risk </b>  for a stroke of {{ result_proba }}. Please consult a doctor. </strong></p>
+                                    {% else %}
+                                    <p> <strong>You are <b style="color: red; font-weight: bold; ">not have</b> at high risk for a stroke at this time.</b></strong> </p>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
+                                    <i class="bi-patch-check-fill timeline-icon"></i>
+                                </div>
+
+                                <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4">
+                                <div class="col-9 col-md-5 ms-md-4 ms-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
+                                    <h3 class=" text-light">Recommendation</h3>
+                                    
+                                    {% if diet.diet_name == "Dash" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthifyme.com/blog/dash-diet-for-high-blood-pressure/" style="color: red;"> Dash Diet</a></b></strong> </p>
+                                    <!-- <a href="https://www.healthifyme.com/blog/dash-diet-for-high-blood-pressure/">We recommend you to <b style="color: red; font-style: italic; " > Dash Diet  </b></a> -->
+                                    {% elif diet.diet_name == "low carb" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.dietdoctor.com/low-carb/keto" style="color: red;"> Low Carb Diet</a></b></strong> </p>
+                                    <!-- <a href="https://www.healthifyme.com/blog/dash-diet-for-high-blood-pressure/">We recommend you to <b style="color: red; font-style: italic; " > Dash Diet  </b></a> -->
+                                    {% elif diet.diet_name == "Intermittent fasting" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthline.com/nutrition/intermittent-fasting-guide#what-it-is" style="color: red;"> Intermittent fasting Diet</a></b></strong> </p>
+
+                                    {% elif diet.diet_name == "One Meal a Day" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthline.com/health/food-nutrition/one-meal-a-day-diet" style="color: red;"> One Meal a Day Diet</a></b></strong> </p>
+                                    
+                                    {% elif diet.diet_name == "Mediterranean" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthline.com/nutrition/mediterranean-diet-meal-plan" style="color: red;"> Mediterranean Diet</a></b></strong> </p>
+
+                                    {% elif diet.diet_name == "The Dukan" %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthline.com/nutrition/dukan-diet-101#what-it-is" style="color: red;"> Dukan Diet</a></b></strong> </p>
+                                    {% else %}
+                                    <p> <strong>we Recommend you to <b style="color: red; font-weight: bold; "><a href="https://www.healthline.com/nutrition/vegan-diet-guide" style="color: red;"> Vegan Diet</a></b></strong> </p>
+
+                                    {% endif %}
+                                    <!-- <a class="link"
+                                href="https://www.healthifyme.com/blog/dash-diet-for-high-blood-pressure/"> Find out more </a>
+
+                            <button class="btn btn-primary" style="float: right;" onclick="readMore(this)">Read
+                                More</button> -->
+                                </div>
+
+
+                                <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
+                                    <i class="bi-file-medical timeline-icon"></i>
+                                </div>
+
+                                <div class="col-9 col-md-5 pe-md-3 pe-lg-0 order-1 order-md-3 py-4 timeline-date">
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <!--? Footer Start-->
+            <div class="footer-area section-bg" data-background="{% static 'assets/img/gallery/footer_bg.jpg'%}">
+                <div class="container">
+                    <div class="footer-top footer-padding">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
+                                <div class="single-footer-caption mb-50">
+    
+                                    <div class="footer-logo">
+                                    <a href="{% url 'accounts:home' %}"><img class="w-50" src="{% static 'assets/img/logo/PicsArt_23-04-29_14-41-32-154-removebg-preview.png'%}" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
+                                <div class="single-footer-caption mb-50">
+                                    <div class="footer-tittle">
+                                        <h4>About Us</h4>
+                                        <div class="footer-pera">
+                                            <p class="info1">Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod
+                                                tempor cergelit rgh. </p>
+                                            <p class="info1">Lorem ipsum dolor sit amet, adipiscing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                                <div class="single-footer-caption mb-50">
+                                    <div class="footer-number mb-50">
+                                        <!-- <h4><span>+564 </span>7885 3222</h4>
+                                        <p>youremail@gmail.com</p> -->
+                                    </div>
+                                    <!-- Form -->
+                                    <div class="footer-form">
+                                        <div id="mc_embed_signup">
+                                            <form target="_blank"
+                                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                                method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                                <input type="email" name="EMAIL" id="newsletter-form-email"
+                                                    placeholder=" Email Address " class="placeholder hide-on-focus"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Your email address'">
+                                                <div class="form-icon">
+                                                    <button type="submit" name="submit" id="newsletter-submit"
+                                                        class="email_icon newsletter-submit button-contactForm">
+                                                        Send
+                                                    </button>
+                                                </div>
+                                                <div class="mt-10 info"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-xl-9 col-lg-8">
+                                <div class="footer-copy-right">
+    
+    
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4">
+                                <!-- Footer Social -->
+                                <div class="footer-social f-right">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fas fa-globe"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End-->
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'js/scrollspy.min.js'%}"></script>
+        <script src="{% static 'js/custom.js'%}"></script>
+    </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compass</title>
+        <style>
+            body {
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(to bottom, #bdc3c7, #ffffff 50%, #85c1e9);
+            }
+            .compass {
+                width: 420px;
+                height: 420px;
+                border-radius: 50%;
+                background: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .compass::before {
+                content: '';
+                width: px;
+                height: 7px;
+                border-radius: 50%;
+                background: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .compass::after {
+                content: '';
+                width: 10px;
+                height: 180px;
+                background: gray;
+                position: absolute;
+                top: 50%;
+                left: 28%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                transform-origin: bottom;
+                z-index: 1;
+            }
+    
+            .compass .number {
+                position: absolute;
+                font-size: 20px;
+                color: white;
+                font-weight: bold;
+            }
+    
+            .compass .north {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .compass .east {
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+            }
+            
+            .compass .south {
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .compass .west {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            .compass .ne {
+                top: 10%;
+                right: 20%;
+            }
+
+            .compass .se {
+                bottom: 10%;
+                right: 20%;
+            }
+
+            .compass .sw {
+                bottom: 10%;
+                left: 20%;
+            }
+
+            .compass .nw {
+                top: 10%;
+                left: 20%;
+            }
+            .compass .nne {
+                top: 70%;
+                right: 6%;
+            }
+            .compass .ene {
+                top: 28%;
+                right: 5%;
+            }
+            .compass .ese {
+                bottom: 25%;
+                right: 86%;
+            }
+            .compass .wnw {
+                top: 28%;
+                left: 5%;
+            }
+            .cardinals {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                color: white;
+                font-weight: bold;
+            }
+            .N{
+                color: whitesmoke;
+                top: 20%;
+                font-size: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+            }
+            .E{
+                color: whitesmoke;
+                font-size: 30px;
+                top: 50%;
+                right: 20%;
+                transform: translateY(-50%);
+                position: absolute;
+            }
+            .S{
+                color: whitesmoke;
+                font-size: 30px;
+                bottom: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+            }
+            .W{
+                color: whitesmoke;
+                font-size: 30px;
+                top: 50%;
+                left: 20%;
+                transform: translateY(-50%);
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="compass">
+            <div class="N">N</div>
+            <div class="E">E</div>
+            <div class="S">S</div>
+            <div class="W">W</div>
+            <div class="number north">{{ numbers.0 }}</div>
+            <div class="number east">{{ numbers.3 }}</div>
+            <div class="number south">{{ numbers.6 }}</div>
+            <div class="number west">{{ numbers.9 }}</div>
+            <div class="number ne">{{ numbers.2 }}</div>
+            <div class="number se">{{ numbers.5 }}</div>
+            <div class="number sw">{{ numbers.8 }}</div>
+            <div class="number nw">{{ numbers.11 }}</div>
+            <div class="number nne">{{ numbers.1 }}</div>
+            <div class="number ene">{{ numbers.4 }}</div>
+            <div class="number ese">{{ numbers.7 }}</div>
+            <div class="number wnw">{{ numbers.10 }}</div>
+            <div class="text-center mb-5" style="border: none;border-radius: 20px;">
+				<a class="login-link" href="{% url 'predict:prediction' %}">go</a>
+			</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!-- result.html -->
+
+<h1>Stroke Prediction Result:</h1>
+
+<p>The prediction result is: {{ result }}</p>
+
+{% if result > 0 %}
+  <p>You are at high risk for a stroke. Please consult a doctor.</p>
+{% else %}
+  <p>You are not at high risk for a stroke at this time.</p>
+{% endif %}
+
+
+<h1>{{diet.diet_name}}</h1>

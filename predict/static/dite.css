@@ -1,0 +1,57 @@
+h1
+{
+    color : rgba(39, 152, 197, 0.819) ;
+}
+a{
+    color: #2E91E4;
+}
+.card mb-3 :hover{
+    background-color: rgba(39, 152, 197, 0.819);
+    color: white;
+}
+.btn btn-primary
+{
+    color :#2E91E4;
+    width: 150px;
+    height: 160px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color:#2E91E4 ;
+    border: 2px solid #093f63;
+    box-shadow: 0 8px 16px 0 rgba(2, 32, 36, 0.2), 0 6px 20px 0 rgba(4, 82, 172, 0.19);
+    float: right;
+}
+
+.hide{
+    display: none;
+}
+.logo{
+    color: white;
+    font-size: 28px;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+
+}
+nav ul li a {
+    color : white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color : black;
+    transition: .3s;
+    text-decoration: none;
+}
+
+nav a i {
+    color : white;
+}
+nav a i:hover {
+    color : black;
+}   
+img:hover{
+    border: 2px black solid;
+}
