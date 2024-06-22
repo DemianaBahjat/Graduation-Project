@@ -1,0 +1,50 @@
+h1
+{
+    color : rgba(140, 158, 247, 0.819) ;
+}
+
+.btn-primary
+{
+    color : white;
+    width: 300px;
+    margin-bottom: 10px;
+    background-color:rgba(140, 158, 247, 0.819)  ;
+    
+}
+
+.hide{
+    display: none;
+}
+
+
+
+.logo{
+    color: white;
+    font-size: 28px;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+
+}
+nav ul li a {
+    color : white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color : black;
+    transition: .3s;
+    text-decoration: none;
+}
+
+nav a i {
+    color : white;
+}
+nav a i:hover {
+    color : black;
+}   
+img:hover{
+    border: 2px black solid;
+}

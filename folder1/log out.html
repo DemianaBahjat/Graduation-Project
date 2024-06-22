@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reset</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="log.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">	
+			<div class="col-lg-6 form-block px-4">
+				<div class="col-lg-8 col-md-6 col-sm-8 col-xs-12 form-box">
+					<div class="text-center mb-3 mt-5">
+						
+					</div>
+					<div class="reset-form d-block">
+					  <form class="reset-password-form">
+					    <h4 class="mb-3 text-center">Logged Out</h4>
+					    <p class="mb-3 text-center bold" style="color: 2E91E4" >
+					                            Thank you for using application 
+					    </p>
+						<p class="mb-3 text-center bold" style="color: 2E91E4 " >
+							See You Later
+						</p>
+					    
+					    <div class="mb-3">
+							<a href="login.html">
+								<button type="submit" class="btn " >login again </button>
+							</a>
+							
+							</div>
+							
+					  </form>
+					
+					  </div> 
+					</div> 
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	function PasswordReset() {
+  	$('form.reset-password-form').on('submit', function(e) {
+      e.preventDefault();
+      $('.reset-form')
+      .removeClass('d-block')
+      .addClass('d-none');
+	    $('.reset-confirmation').addClass('d-block');
+		});
+	}
+
+	window.addEventListener('load', function() {
+    PasswordReset();
+	});
+</script>
+</body>
+</html>
